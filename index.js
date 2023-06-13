@@ -12,6 +12,9 @@ server.use(cors());
 server.use(express.json())
 const db = mysql.createConnection(process.env.URL)
 
+server.get("/", (req, res)=>{
+    res.send("OLA MUNDO!")
+})
 server.post('/connect', ({body}, res)=>{
     let total = 0;
     db.query("select * from perfil", (err, resQuery, field)=>{
