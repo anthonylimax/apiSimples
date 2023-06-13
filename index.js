@@ -39,6 +39,6 @@ server.post('/connect', ({body}, res)=>{
 })
 
 
-server.listen(9000, ()=>{
+server.listen(PROCESS.env.PORT, ()=>{
     console.log("running")
 })
