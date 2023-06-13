@@ -33,4 +33,4 @@ server.post('/connect', ({body}, res)=>{
 })
 
 
-server.listen(PROCESS.env.PORT)
+server.listen(process.env.PORT)
