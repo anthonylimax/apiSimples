@@ -11,15 +11,10 @@ let response = {};
 server.use(cors());
 server.use(express.json())
 const db = mysql.createConnection(process.env.DATABASE_URL);
-
-server.post('/getData', ({body}, res)=>{
-   console.log(body) 
-})
 server.post('/connect', ({body}, res)=>{
     let total = 0;
     db.query("select * from perfil", (err, resQuery, field)=>{
         response = resQuery.find(profile => profile.email == body.emailClient && profile.pass == body.passwordClient)
-        console.log(response)
 
         if(response == undefined){
             res.send(false)
@@ -31,7 +26,6 @@ server.post('/connect', ({body}, res)=>{
                     total += +element.price * element.numberOfItens;
                 })
                 response =  {...response, total: total.toFixed(2),carrinho: resp}
-                console.log(response)
                 res.json(response)
            })
         }
@@ -39,6 +33,4 @@ server.post('/connect', ({body}, res)=>{
 })
 
 
-server.listen(PROCESS.env.PORT, ()=>{
-    console.log("running")
-})
+server.listen(PROCESS.env.PORT)
