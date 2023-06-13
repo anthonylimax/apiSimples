@@ -10,7 +10,8 @@ const server = express();
 let response = {};
 server.use(cors());
 server.use(express.json())
-const db = mysql.createConnection(process.env.DATABASE_URL);
+const db = mysql.createConnection('mysql://fg4i69dbs63u9yhay4oh:pscale_pw_rOVz7InJHJsyp9BMXbLVYYQphu8yDZylzQdxZE7V3dW@aws.connect.psdb.cloud/approque?ssl={"rejectUnauthorized":true}')
+
 server.post('/connect', ({body}, res)=>{
     let total = 0;
     db.query("select * from perfil", (err, resQuery, field)=>{
@@ -33,4 +34,4 @@ server.post('/connect', ({body}, res)=>{
 })
 
 
-server.listen(process.env.PORT)
+server.listen(process.env.PORT ||8000)
