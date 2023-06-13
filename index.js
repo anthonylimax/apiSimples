@@ -10,7 +10,7 @@ const server = express();
 let response = {};
 server.use(cors());
 server.use(express.json())
-const db = mysql.createConnection('mysql://28ayht1fpr3jzw4yli54:pscale_pw_s6iUrrMv0vIOnuxNYmoSVDNT82ihcmB3NXWX3Iq24ez@aws.connect.psdb.cloud/approque?ssl={"rejectUnauthorized":true}')
+const db = mysql.createConnection('mysql://wonuwp3zgrklr9ge9yvy:pscale_pw_xTlUcnEaDsWVtNLifr1FIfGlYxVwjw9MZuYZKHFSIKq@aws.connect.psdb.cloud/approque?ssl={"rejectUnauthorized":true}')
 
 server.post('/connect', ({body}, res)=>{
     let total = 0;
