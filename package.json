@@ -1,5 +1,5 @@
 {
-  "module": "",
+  "type": "module",
   "name": "apirest",
   "version": "1.0.0",
   "description": "",
